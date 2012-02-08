@@ -1,0 +1,1 @@
+maximum [product $ map (\x -> read [x] :: Integer) $ take 5 $ drop i n | i <- [0..(length n - 5)]]
