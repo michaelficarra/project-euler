@@ -16,4 +16,4 @@ firstFactor x =
 
 primeFactors x = unfoldr firstFactor x
 
-maximum $ primeFactors 600851475143
+main = print $ maximum $ primeFactors 600851475143
