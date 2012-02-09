@@ -1,4 +1,2 @@
-head [x | x <- [1..],
-  let x' = sort $ show $ 2 * x in
-  all ((== x') . sort . show) [k * x | k <- [3..6]]
-  ]
+import Data.List
+until (\x -> (==) 1 $ length $ nub [sort $ show $ k * x | k <- [2..6]]) succ 1
