@@ -1,9 +1,12 @@
 import Data.List
 
-prime 1 = False
-prime 2 = True
-prime x = not $ any (== 0) $ map (rem x) [2..(x-1)]
-primes = [x | x <- [2..], prime x]
+primes :: [Int]
+primes = 2 : filter (isPrime primes) [3,5..] where
+  isPrime (p:ps) n
+    | mod n p == 0 = False
+    | p*p > n      = True
+    | otherwise    = isPrime ps n
+  isPrime [] _ = False -- never used, but avoids compiler warning
 
 firstFactor x =
   ff x primes

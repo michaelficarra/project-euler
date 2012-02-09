@@ -6,4 +6,4 @@ primes = 2 : filter (isPrime primes) [3,5..] where
     | otherwise    = isPrime ps n
   isPrime [] _ = False -- never used, but avoids compiler warning
 
-main = print $ head $ drop 10000 primes
+main = print $ sum $ takeWhile (< 2000000) primes
